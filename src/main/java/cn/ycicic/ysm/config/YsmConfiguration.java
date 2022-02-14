@@ -33,7 +33,7 @@ public class YsmConfiguration {
 
     @PostConstruct
     public void init() {
-        /*TO_USERS = ysmProperties.getToUsers().stream().map(user -> {
+        TO_USERS = ysmProperties.getToUsers().stream().map(user -> {
             String token = DdCpConfiguration.getToken(user.getAgentId());
             String post = HttpUtil.post("https://oapi.dingtalk.com/topapi/v2/user/getbymobile?access_token=" + token, "{\"mobile\":\"" + user.getPhone() + "\"}");
             JSONObject object = JSONObject.parseObject(post);
@@ -44,7 +44,7 @@ public class YsmConfiguration {
                 log.error("获取用户信息失败：{}", object.toJSONString());
             }
             return null;
-        }).filter(Objects::nonNull).collect(Collectors.toList());*/
+        }).filter(Objects::nonNull).collect(Collectors.toList());
     }
 
     public static List<String> getToUsers() {

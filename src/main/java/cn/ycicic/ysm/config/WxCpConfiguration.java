@@ -61,7 +61,7 @@ public class WxCpConfiguration {
 
     @PostConstruct
     public void initServices() {
-        /*cpServices = this.properties.getAppConfigs().stream().map(a -> {
+        cpServices = this.properties.getAppConfigs().stream().map(a -> {
             val configStorage = new WxCpDefaultConfigImpl();
             configStorage.setCorpId(this.properties.getCorpId());
             configStorage.setAgentId(a.getAgentId());
@@ -72,11 +72,11 @@ public class WxCpConfiguration {
             service.setWxCpConfigStorage(configStorage);
             routers.put(a.getAgentId(), this.newRouter(service));
             return service;
-        }).collect(Collectors.toMap(service -> service.getWxCpConfigStorage().getAgentId(), a -> a));*/
+        }).collect(Collectors.toMap(service -> service.getWxCpConfigStorage().getAgentId(), a -> a));
     }
 
     private WxCpMessageRouter newRouter(WxCpService wxCpService) {
-        final val newRouter = new WxCpMessageRouter(wxCpService);
+        val newRouter = new WxCpMessageRouter(wxCpService);
 
         // 记录所有事件的日志 （异步执行）
         newRouter.rule().handler(this.logHandler).next();
