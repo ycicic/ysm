@@ -3,9 +3,8 @@ name: YMS Build and Deploy
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+      - 'v*'
 
 env:
   REGISTRY: registry.cn-hangzhou.aliyuncs.com
