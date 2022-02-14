@@ -36,7 +36,7 @@ public class DdCpConfiguration {
 
     @PostConstruct
     public void init() {
-        CONFIGS = this.ddCpProperties.getAppConfigs().stream().collect(Collectors.toMap(DdCpProperties.AppConfig::getAgentId, appConfig -> appConfig));
+//        CONFIGS = this.ddCpProperties.getAppConfigs().stream().collect(Collectors.toMap(DdCpProperties.AppConfig::getAgentId, appConfig -> appConfig));
     }
 
     public static DdCpProperties.AppConfig getConfig(Integer agentId) {

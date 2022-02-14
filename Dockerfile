@@ -4,4 +4,4 @@ ADD /target/ysm-$TAG_VERSION.jar /home/ysm/ysm-$TAG_VERSION.jar
 EXPOSE 11004
 LABEL version = $TAG_VERSION
 ENTRYPOINT java -jar /home/ysm/ysm-$TAG_VERSION.jar
-MAINTAINER Mirror ycicic
+MAINTAINER https://github.com/ycicic
