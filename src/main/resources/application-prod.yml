@@ -1,6 +1,6 @@
 nacos:
   config:
-    server-addr: Nacos:8848
+    server-addr: 192.168.3.208:8848
     bootstrap:
       enable: true
       log-enable: true
