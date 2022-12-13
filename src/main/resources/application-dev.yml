@@ -1,0 +1,14 @@
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    bootstrap:
+      enable: true
+      log-enable: true
+    auto-refresh: true
+    type: yaml
+    group: YSM
+    data-ids: ${spring.application.name}-${spring.profiles.active}.yml,${spring.application.name}.yml
+logging:
+  level:
+    com.ycicic.ysm: debug
+    org.springframework: warn

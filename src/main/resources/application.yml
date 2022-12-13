@@ -1,0 +1,30 @@
+server:
+  port: 20801
+spring:
+  application:
+    name: ysm
+  profiles:
+    active: prod
+
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.ycicic.ysm.**.domain
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis/mybatis-config.xml
+
+nacos:
+  config:
+    server-addr: Nacos:8848
+    bootstrap:
+      enable: true
+      log-enable: true
+    auto-refresh: true
+    type: yaml
+    group: YSM
+    data-ids: ${spring.application.name}-${spring.profiles.active}.yml,${spring.application.name}.yml
+logging:
+  level:
+    root: info
