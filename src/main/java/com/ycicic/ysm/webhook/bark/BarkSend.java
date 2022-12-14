@@ -44,8 +44,6 @@ public class BarkSend implements SendService {
                 .isArchive(barkConf.getIsArchive())
                 .build();
 
-        String s = JSON.toJSONString(barkParam);
-        System.out.println(s);
         String result = HttpUtil.post(barkConf.getServerUrl(), JSON.toJSONString(barkParam));
         log.info("Bark执行完成: {}", result);
     }
